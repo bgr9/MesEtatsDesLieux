@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="item logoEmetteur        "><img src="#ITEM_logoEmetteur#"></div>
+    <div class="item adresseEmetteur        ">
+        <h2>#ITEM_nomEmetteur#</h2>
+        <p>#ITEM_adresseEmetteur#
+        <br>#ITEM_codePostalEmetteur# #ITEM_villeEmetteur#</p>
+    </div>
+</div> 
+<div class="item titreEDL            ">
+        <h1><center>Constat d'état des lieux #ITEM_typeEDL# #ITEM_refEDL# du #ITEM_dateEDL#</center></h1>
+        #ITEM_Reference_EDL_Entree#
+        <h2>Dressé contradictoirement entre les soussignés</h2>
+    </div>
+<table class="center">
+        <tr><td width=45%>
+            <span style="color:grey">Proprietaire :</span> #ITEM_nomProprietaire#<br>
+            <span style="color:grey">Effectué par :</span> #ITEM_nomExecutantEDL#<br>
+            <span style="color:grey">Mandataire :</span> #ITEM_nomMandataire#<br>
+            #ITEM_adresseMandataire#<br>
+            #ITEM_codePostalMandataire# #ITEM_villeMandataire#
+        </td><td width=10%>&emsp;<strong>Et </strong></td>
+            <td width=45%>
+                <span style="color:grey">Locataire :</span> #ITEM_nomLocataire#<br>
+                <span style="color:grey">email :</span> #ITEM_emailLocataire#<br>
+                <span style="color:grey">Adresse :</span> #ITEM_adresseBien#<br>
+                #ITEM_codePostalBien# #ITEM_villeBien#
+                
+            </td></tr>
+        </table class="center">
+<br>
+<div class="item bien">
+            <p><center>Bien loué</center></p>
+            <table class="center">
+                <tr><td>
+                    Type de bien : #ITEM_typeBien#<br>
+                    Localisation : #ITEM_localisationBien#
+                </td>
+                    <td width=10%> </td>
+                    <td>
+                        Adresse : #ITEM_adresseBien#<br>
+                        #ITEM_codePostalBien# #ITEM_villeBien#
+                        
+                    </td></tr>
+            </table>
+            <p>
+            <br></p>
+            
+        </div>
+<div class="groupe">#ITEM_compteurs#</div>
+<div class="groupe">#ITEM_entretiens#</div>
+<div class="groupe">#ITEM_clefs#</div>
+<div class="groupe">#ITEM_fournitures#</div>
+<div class="groupe">#ITEM_pieces#</div>
+        
+<div class="groupe">#ITEM_legende#</div>
+      
+<div class="container2">
+        <div class="item clauseJuridique"><p style="font-family:police; color:grey;text-align: justify;text-justify: inter-word;font-style:italic;">
+            &emsp;#ITEM_clauseJuridique#</p></div>
+        <div class="item signatureLocataire    ">#ITEM_libelleSignatureLocataire#</div>
+        <div class="item signatureBailleur    ">#ITEM_libelleSignatureBailleur#</div>
+        <div class="item signatureLocataireImageEDL    "><img src="#ITEM_signatureLocataireImageEDL#"></div>
+        <div class="item signatureBailleurImageEDL    "><img src="#ITEM_signatureBailleurImageEDL#"></div>
+        <div class="item dateRecueilLocataire    ">     <p>#ITEM_dateSignatureLocataire#</p>    <p>#ITEM_dateParapheLocataire#</p></div>
+        <div class="item dateRecueilBailleur">          <p>#ITEM_dateSignatureBailleur#</p>     <p>#ITEM_dateParapheBailleur#</p></div>
+        <div class="item documentGenereLe">          <p>#ITEM_documentGenereLe#</p></div>
+</div>
+</body>
+</html>
+
+    
+    
+

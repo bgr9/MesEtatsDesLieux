@@ -1,0 +1,65 @@
+
+<--! Mettre les lignes de relevés -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+
+   grid-template-areas:
+     "entete entete entete"
+    "titre1 titre2 titre3"
+    "contenu1 contenu2 contenu3";
+  background-color: #2196F3;
+  padding: 3px;
+}
+.entete {
+	font-size: 15px;
+    grid-area: entete;
+    background-color: #3196F3;
+    
+}
+
+.titre1 {
+	grid-area: titre1
+}
+
+.titre2 {
+	grid-area: titre2
+}
+
+.titre3 {
+	grid-area: titre3
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<h1>The grid-template Property</h1>
+
+<p>The grid-template property can be used as a shorthand property for the <em>grid-template-rows</em> and the <em>grid-template-columns</em> properties.</p>
+<p>This grid layout has three columns, and the first row is 150px high:</p>
+
+<div class="grid-container">
+  <div class="item entete">Nom du tableau</div>
+  <div class="item titre1">Nom Equipement</div>
+  <div class="item titre2">Observation</div>  
+  <div class="item titre3">Proprete</div>
+  <div class="item contenu1">Mur</div>
+  <div class="item contenu2">Plutot en bon état, et meme plus</div>  
+  <div class="item contenu3">Bon proprete</div>
+  
+</div>
+
+</body>
+</html>
+    

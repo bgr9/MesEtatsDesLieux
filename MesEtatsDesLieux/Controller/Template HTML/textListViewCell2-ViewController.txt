@@ -1,0 +1,103 @@
+import Foundation
+
+// MARK: - Temporaire
+
+enum StatutAction: Codable {
+    case nonPrevu
+    case aFaire
+    case enCours
+    case termine
+    case archive
+    case nonApplicable
+    
+    var description: String {
+        switch self {
+        case .nonPrevu: return "Non Prevu"
+        case .aFaire: return "A faire"
+        case .enCours: return "En cours"
+        case .termine: return "Terminé"
+        case .archive: return "Archivé"
+        case .nonApplicable : return "Non applicable"
+        }
+    }
+}
+
+enum TypeAction: Codable {
+    case decrireBien
+    case identActeurs
+    case planifEDL
+    case realEDL
+    case miseEnPage
+    case verifConstat
+    case signerConstat
+    case nonApplicable
+    
+    var description: String {
+        switch self {
+  /*      case .decrireBien: return   "Item 1"
+        case .identActeurs: return  "Item 2"
+        case .planifEDL: return     "Item 3"
+        case .realEDL: return       "Item 4"
+        case .miseEnPage: return    "Item 5"
+        case .verifConstat: return  "Item 6"
+        case .signerConstat: return "Item 7"
+        case .nonApplicable: return "Item 8"
+   */
+            
+    
+     
+     case .decrireBien: return "Decrire le bien"
+     case .identActeurs: return "Identifier les acteurs"
+     case .planifEDL: return "Planifier l'état des lieux"
+     case .realEDL: return "Réaliser l'état des lieux"
+     case .miseEnPage: return "Mettre en page le constat"
+     case .verifConstat: return "Vérifier le constat"
+     case .signerConstat: return "Signer le constat"
+     case .nonApplicable: return "Non applicable"
+
+     
+     
+        }
+    }
+}
+
+
+
+
+struct Bien: Codable, Hashable {
+    var idBien : UUID = UUID()
+    var nomBien: String
+    
+    
+    static func == (lhs: Bien , rhs: Bien )  -> Bool  {
+        return lhs.idBien == rhs.idBien
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(idBien)
+    }
+}
+ 
+struct ActionBien: Codable, Hashable {
+    var idAction: UUID = UUID()
+   
+    var idBien: UUID
+    
+    var typeAction: TypeAction
+//    var ordreAction: Int = 0
+        
+  
+        
+    static func == (lhs: ActionBien , rhs: ActionBien ) -> Bool {
+        return lhs.idAction == rhs.idAction
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(idAction)
+    }
+}
+
+
+
+
+

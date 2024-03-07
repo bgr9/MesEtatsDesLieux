@@ -1,0 +1,49 @@
+#ITEM_nomEmetteur# ; nomEmetteur
+#ITEM_adresseEmetteur# ; adresseEmetteur
+#ITEM_codePostalEmetteur# ; codePostalEmetteur 
+#ITEM_villeEmetteur# ; villeEmetteur
+#ITEM_typeEDL# ; typeEDL
+#ITEM_refEDL# ; refEDL
+#ITEM_dateEDL# ; dateEDL
+#ITEM_nomProprietaire# ; nomProprietaire
+#ITEM_nomExecutantEDL# ; nomExecutantEDL
+#ITEM_nomMandataire# ; nomMandataire
+#ITEM_adresseMandataire# ; adresseMandataire
+#ITEM_codePostalMandataire# ; codePostalMandataire
+#ITEM_villeMandataire# ; villeMandataire
+#ITEM_nomLocataire# ; nomLocataire
+#ITEM_emailLocataire# ; emailLocataire
+#ITEM_adresseBien# ; adresseBien
+#ITEM_codePostalBien# ; codePostalBien
+#ITEM_villeBien# ; villeBien
+#ITEM_typeBien# ; typeBien
+#ITEM_localisationBien# ; localisationBien
+#ITEM_adresseBien# ; adresseBien
+#ITEM_codePostalBien# ; codePostalBien
+#ITEM_villeBien# ; villeBien
+
+
+
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_nomEmetteur#", with: edl.nomEmetteur ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_adresseEmetteur#", with: edl.adresseEmetteur ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_codePostalEmetteur#", with: edl.codePostalEmetteur ?? "" )
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_villeEmetteur#", with: edl.villeEmetteur ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_typeEDL#", with: edl.typeEDL)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_refEDL#", with: edl.refEDL)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_dateEDL#", with: edl.dateEDL)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_nomProprietaire#", with: edl.nomProprietaire)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_nomExecutantEDL#", with: edl.nomExecutantEDL)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_nomMandataire#", with: edl.nomMandataire ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_adresseMandataire#", with: edl.adresseMandataire ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_codePostalMandataire#", with: edl.codePostalMandataire ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_villeMandataire#", with: edl.villeMandataire ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_nomLocataire#", with: edl.nomLocataire)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_emailLocataire#", with: edl.emailLocataire)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_adresseBien#", with: edl.adresseBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_codePostalBien#", with: edl.codePostalBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_villeBien#", with: edl.villeBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_typeBien#", with: edl.typeBien ?? "")
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_localisationBien#", with: edl.localisationBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_adresseBien#", with: edl.adresseBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_codePostalBien#", with: edl.codePostalBien)
+HTMLContent = HTMLContent.replacingOccurrences(of: "#ITEM_villeBien#", with: edl.villeBien)

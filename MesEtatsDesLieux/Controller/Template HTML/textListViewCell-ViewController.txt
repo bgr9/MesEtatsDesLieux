@@ -1,0 +1,201 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    
+    
+    typealias DataSourceType = UICollectionViewDiffableDataSource<ViewModel.Section, ViewModel.Item>
+    
+    var collectionView: UICollectionView!
+    
+    
+    var model2 = Model2()
+    var dataSource: DataSourceType!
+   
+    
+    enum ViewModel {
+        enum Section: Hashable {
+            case biens
+        }
+        
+        enum Item: Hashable {
+            case bien       (bien: Bien)
+            case actionBien (actionBien: ActionBien)
+            
+            func hash(into hasher: inout Hasher) {
+                switch self {
+                case .bien           (let bien):
+                    hasher.combine(bien.idBien
+                    )
+                case .actionBien    (let actionBien):
+                    hasher.combine(actionBien.idAction.uuidString
+                    )
+                }
+            }
+            static func == (_ lhs: Item, _ rhs: Item) -> Bool {
+                switch (lhs, rhs) {
+                case (.bien  (let lb), .bien(let rb)):
+                    return lb.idBien == rb.idBien
+                case (.actionBien  (let ld), .actionBien(let rd)):
+                    return ld.idAction.uuidString == rd.idAction.uuidString
+                    
+                default:
+                    return false
+                }
+                
+            }
+        }
+    }
+    
+    
+    static let bienA = Bien(nomBien: "Parent A")
+    static let bienB = Bien(nomBien: "Parent B")
+    
+    struct Model2 {
+        
+        var biens : [Bien] { return [bienA , bienB] }
+        var actionsBien : [ActionBien] { return [
+            ActionBien(idBien: bienA.idBien, typeAction: .case1),
+            ActionBien(idBien: bienA.idBien, typeAction: .case2),
+            ActionBien(idBien: bienA.idBien, typeAction: .case3),
+            ActionBien(idBien: bienA.idBien, typeAction: .case4),
+            ActionBien(idBien: bienA.idBien, typeAction: .case5),
+            ActionBien(idBien: bienA.idBien, typeAction: .case6),
+            ActionBien(idBien: bienA.idBien, typeAction: .case7),
+            
+            ActionBien(idBien: bienB.idBien, typeAction: .case1),
+            ActionBien(idBien: bienB.idBien, typeAction: .case2),
+            ActionBien(idBien: bienB.idBien, typeAction: .case3),
+            ActionBien(idBien: bienB.idBien, typeAction: .case4),
+            ActionBien(idBien: bienB.idBien, typeAction: .case5),
+            ActionBien(idBien: bienB.idBien, typeAction: .case6),
+            ActionBien(idBien: bienB.idBien, typeAction: .case7)
+        ]
+            
+        }
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureLayout()
+        
+        dataSource = makeDataSource()
+        collectionView.dataSource = dataSource
+        
+        applyInitialSnaphot()
+    }
+    var editEnCours = false
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+         
+        
+    }
+    
+    
+   
+    
+    
+    func configureLayout() {
+        // MARK: Create list layout
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .grouped)
+        layoutConfig.headerMode = .none
+        layoutConfig.showsSeparators = true
+        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        
+        // MARK: Configure collection view
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: listLayout)
+        view.addSubview(collectionView)
+        
+        // Make collection view take up the entire view
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 0.0),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0.0),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0.0),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0),
+        ])
+        
+    }
+    
+    
+    func makeDataSource () -> DataSourceType {
+        let actionBienCellRegistration = UICollectionView.CellRegistration<ActionBienCollectionViewCell,ViewModel.Item> {cell,indexPath,itemIdentifier in
+            
+            switch itemIdentifier {
+            case .bien (let bien):
+               print("----Enregistrement cell Bien" , bien.nomBien)
+                cell.bien = bien
+                cell.configBien = true
+                cell.actionBien = ActionBien(idBien: UUID(), typeAction: .case8)
+                cell.bienViewController = self
+                
+                let outlineDisclosureAccessoryOptions = UICellAccessory.OutlineDisclosureOptions(style: .header, isHidden: false)
+                let cellAccessoryOutlineDisclosure = UICellAccessory.outlineDisclosure(options: outlineDisclosureAccessoryOptions )
+                
+                
+                cell.accessories = [cellAccessoryOutlineDisclosure]
+    
+            case .actionBien (let actionBien):
+                  print("----Enregistration cell Action" , actionBien.typeAction.description," pour ", actionBien.idBien)
+                cell.actionBien = actionBien
+                cell.configBien = false
+                cell.bien = Bien(nomBien: "")
+                cell.bienViewController = self
+                
+            }
+            
+        }
+            
+            
+            let dataSource = DataSourceType (collectionView: collectionView)
+            { collectionView , indexPath, item -> UICollectionViewCell? in
+                return collectionView.dequeueConfiguredReusableCell(using: actionBienCellRegistration, for: indexPath, item: item)
+            }
+            return dataSource
+        }
+        
+        
+        
+        func applyInitialSnaphot () {
+            var snapshot = NSDiffableDataSourceSnapshot<ViewModel.Section, ViewModel.Item>()
+            snapshot.appendSections([.biens])
+            dataSource.apply(snapshot)
+            
+            applySnapshotSection(section: .biens, etatExpanded: nil )
+            
+            
+        }
+        
+        func applySnapshotSection(section: ViewModel.Section , etatExpanded: [ViewModel.Item]? ) {
+            
+            print ("----> Maj Snapshot")
+            var genericSnapshot = NSDiffableDataSourceSectionSnapshot<ViewModel.Item>()
+           
+            
+            for bien in model2.biens {
+                print ("Snap: EDL/Bien =" , bien.nomBien)
+                
+                let bienItem = ViewModel.Item.bien(bien: bien)
+                genericSnapshot.append([bienItem])
+                
+                var itemsBien = [ViewModel.Item]()
+                for actionBien in  model2.actionsBien.sorted(by: {$0.typeAction.description <= $1.typeAction.description }){
+                    if actionBien.idBien == bien.idBien {
+                        itemsBien.append(ViewModel.Item.actionBien(actionBien: actionBien))
+                    }
+                }
+                genericSnapshot.append(itemsBien, to: bienItem)
+            }
+            
+            dataSource.apply(genericSnapshot, to: .biens, animatingDifferences: true)
+        }
+}
+
+

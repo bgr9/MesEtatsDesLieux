@@ -1,0 +1,111 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Propriétaire"; ObjectID = "0gF-aO-ahF"; */
+"0gF-aO-ahF.headerTitle" = "Propriétaire";
+
+/* Class = "UILabel"; text = "Date de réalisation"; ObjectID = "3VB-lo-wxH"; */
+"3VB-lo-wxH.text" = "Date de réalisation";
+
+/* Class = "UILabel"; text = "nomBien"; ObjectID = "AFa-aT-tK1"; */
+"AFa-aT-tK1.text" = "nomBien";
+
+/* Class = "UITextField"; placeholder = "Nom de la personne réalisant l'état des lieux"; ObjectID = "Dvc-Gk-B6U"; */
+"Dvc-Gk-B6U.placeholder" = "Nom de la personne réalisant l'état des lieux";
+
+/* Class = "UITabBarItem"; title = "Communs"; ObjectID = "HeK-Or-Ges"; */
+"HeK-Or-Ges.title" = "Communs";
+
+/* Class = "UILabel"; text = "Date de l'état des lieux :"; ObjectID = "NIH-vz-8Vr"; */
+"NIH-vz-8Vr.text" = "Date de l'état des lieux :";
+
+/* Class = "UILabel"; text = "nomLocataire"; ObjectID = "O94-MD-xbG"; */
+"O94-MD-xbG.text" = "nomLocataire";
+
+/* Class = "UITabBarItem"; title = "Emetteur"; ObjectID = "PPo-CJ-HJK"; */
+"PPo-CJ-HJK.title" = "Emetteur";
+
+/* Class = "UITextField"; placeholder = "Nom du bien"; ObjectID = "Pm9-VE-zrm"; */
+"Pm9-VE-zrm.placeholder" = "Nom du bien";
+
+/* Class = "UILabel"; text = "adresseBien"; ObjectID = "QOC-WB-hWY"; */
+"QOC-WB-hWY.text" = "adresseBien";
+
+/* Class = "UITabBarItem"; title = "Etat des Lieux"; ObjectID = "SGA-Rf-yWV"; */
+"SGA-Rf-yWV.title" = "Etat des Lieux";
+
+/* Class = "UILabel"; text = "nomProprietaire"; ObjectID = "T1K-cp-T5r"; */
+"T1K-cp-T5r.text" = "nomProprietaire";
+
+/* Class = "UILabel"; text = "dateEDL"; ObjectID = "TdO-JH-sCJ"; */
+"TdO-JH-sCJ.text" = "dateEDL";
+
+/* Class = "UITextField"; placeholder = "Adresse"; ObjectID = "UiR-7T-hXg"; */
+"UiR-7T-hXg.placeholder" = "Adresse";
+
+/* Class = "UITextField"; placeholder = "Date"; ObjectID = "VfU-bx-NoT"; */
+"VfU-bx-NoT.placeholder" = "Date";
+
+/* Class = "UILabel"; text = "Ville"; ObjectID = "aBD-DK-ddf"; */
+"aBD-DK-ddf.text" = "Ville";
+
+/* Class = "UITextField"; placeholder = "Nom du mandataire"; ObjectID = "adK-o1-Eqe"; */
+"adK-o1-Eqe.placeholder" = "Nom du mandataire";
+
+/* Class = "UISegmentedControl"; ibShadowedToolTip = "Entrée ou Sortie"; ObjectID = "axP-2r-bD2"; */
+"axP-2r-bD2.ibShadowedToolTip" = "Entrée ou Sortie";
+
+/* Class = "UITableViewSection"; headerTitle = "Etat des lieux"; ObjectID = "e5p-23-tl0"; */
+"e5p-23-tl0.headerTitle" = "Etat des lieux";
+
+/* Class = "UITabBarItem"; title = "Accueil"; ObjectID = "f3O-pq-M1e"; */
+"f3O-pq-M1e.title" = "Accueil";
+
+/* Class = "UINavigationController"; title = "EDL détail"; ObjectID = "hgm-yn-XZt"; */
+"hgm-yn-XZt.title" = "EDL détail";
+
+/* Class = "UINavigationItem"; prompt = "Etat des lieux de XXX"; ObjectID = "i3m-hY-Nfc"; */
+"i3m-hY-Nfc.prompt" = "Etat des lieux de XXX";
+
+/* Class = "UINavigationItem"; title = "Entrée ou Sortie"; ObjectID = "i3m-hY-Nfc"; */
+"i3m-hY-Nfc.title" = "Entrée ou Sortie";
+
+/* Class = "UITextField"; placeholder = "Localisation (batiment, escalier, étage, porte...)"; ObjectID = "kh7-zE-F3R"; */
+"kh7-zE-F3R.placeholder" = "Localisation (batiment, escalier, étage, porte...)";
+
+/* Class = "UITableViewSection"; headerTitle = "Identification du bien"; ObjectID = "qqG-I7-TAV"; */
+"qqG-I7-TAV.headerTitle" = "Identification du bien";
+
+/* Class = "UITableViewSection"; headerTitle = "Locataire"; ObjectID = "quc-tv-bIg"; */
+"quc-tv-bIg.headerTitle" = "Locataire";
+
+/* Class = "UILabel"; text = "nomExecutant"; ObjectID = "roG-4M-p2t"; */
+"roG-4M-p2t.text" = "nomExecutant";
+
+/* Class = "UITextField"; placeholder = "Email d'envoi de l'état des lieux"; ObjectID = "s3M-US-0HF"; */
+"s3M-US-0HF.placeholder" = "Email d'envoi de l'état des lieux";
+
+/* Class = "UITextField"; placeholder = "Code postal"; ObjectID = "sHj-Zv-URJ"; */
+"sHj-Zv-URJ.placeholder" = "Code postal";
+
+/* Class = "UINavigationItem"; title = "Mes Etats Des Lieux"; ObjectID = "tLB-nh-9ay"; */
+"tLB-nh-9ay.title" = "Mes Etats Des Lieux";
+
+/* Class = "UINavigationItem"; title = "Mon état des lieux"; ObjectID = "tf7-qy-w3G"; */
+"tf7-qy-w3G.title" = "Mon état des lieux";
+
+/* Class = "UITextField"; placeholder = "Nom du propriétaire"; ObjectID = "vnX-KU-Aa3"; */
+"vnX-KU-Aa3.placeholder" = "Nom du propriétaire";
+
+/* Class = "UILabel"; text = "Type d'état des lieux"; ObjectID = "xeM-sc-y8E"; */
+"xeM-sc-y8E.text" = "Type d'état des lieux";
+
+/* Class = "UITextField"; placeholder = "Ville"; ObjectID = "yqI-C9-t6F"; */
+"yqI-C9-t6F.placeholder" = "Ville";
+
+/* Class = "UILabel"; text = "codePostal"; ObjectID = "yra-xy-kcK"; */
+"yra-xy-kcK.text" = "codePostal";
+
+/* Class = "UITextField"; placeholder = "Nom(s) du ou des locataire(s)"; ObjectID = "z0d-6F-dEu"; */
+"z0d-6F-dEu.placeholder" = "Nom(s) du ou des locataire(s)";
+
+/* Class = "UILabel"; text = "JJ/MM/AAAA à HH:MM"; ObjectID = "zeg-eM-rls"; */
+"zeg-eM-rls.text" = "JJ/MM/AAAA à HH:MM";
